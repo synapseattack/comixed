@@ -1,0 +1,18 @@
+# Replace /config-path with the path for your database files.
+# Replace /comics-path with the path for your comic files.
+
+version: "3.6"
+services:
+  comixed:
+    build: ./
+    # image: "comixed/comixed"
+    container_name: "comixed"
+    environment:
+      - TZ=Pst/UTC
+    volumes:
+      - /home/ron/Desktop/test_data:/comic_data
+      - /home/ron/Desktop/Darkhawk:/library
+      - /home/ron/Desktop/imports:/imports
+    ports:
+      - "0.0.0.0:7171:7171/tcp"
+    restart: unless-stopped
