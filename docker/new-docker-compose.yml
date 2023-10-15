@@ -7,8 +7,6 @@ services:
     build: ./
     # image: "comixed/comixed"
     container_name: "comixed"
-    environment:
-      - TZ=Pst/UTC
     volumes:
       - /home/ron/Desktop/test_data:/comic_data
       - /home/ron/Desktop/Darkhawk:/library
